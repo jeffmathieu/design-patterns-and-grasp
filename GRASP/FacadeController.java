@@ -1,7 +1,7 @@
-package tests;
+package GRASP;
 class Facade {
     final OrderService orderService = new OrderService();
-    final PaymentService paymentService = new PaymentService();
+    final PaymentService1 paymentService = new PaymentService1();
 
     void checkout(String cName) {
         orderService.createOrder(cName);
@@ -15,7 +15,7 @@ class OrderService {
     void createOrder(String cName) {System.out.println("order for " + cName + " created.");}
 }
 
-class PaymentService {
+class PaymentService1 {
     void processPayment(String cName) {System.out.println("payment processed for " + cName + ".");}
 }
 

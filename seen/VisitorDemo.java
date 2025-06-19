@@ -25,6 +25,6 @@ public class VisitorDemo {
         ShapeVisitor visitor = new DrawingVisitor();
 
         circle.accept(visitor);
-        circle.accept(visitor);
+        rectangle.accept(visitor);
     }
 }

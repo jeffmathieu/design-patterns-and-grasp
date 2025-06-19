@@ -26,7 +26,7 @@ class Particle {
     void draw(Object canvas) {}
 }
 
-public class Game {
+public class FlyweightTest {
     List<Particle> particles = new ArrayList<>();
 
     void addParticle(Particle p) {
@@ -39,7 +39,7 @@ public class Game {
         }
     }
     class Unit {
-        void fireAt(Unit target, Game game) {
+        void fireAt(Unit target, FlyweightTest game) {
             Particle p = new Particle();
             game.addParticle(p);
         }
@@ -60,9 +60,9 @@ public class Game {
 
             long before = runtime.totalMemory() - runtime.freeMemory();
 
-            Game game = new Game();
+            FlyweightTest flyweight = new FlyweightTest();
             Sprite sprite = new Sprite();
-            game.simulateParticles(1_000, sprite);
+            flyweight.simulateParticles(1_000, sprite);
 
             runtime.gc(); // stabilize memory after allocation
             long after = runtime.totalMemory() - runtime.freeMemory();
